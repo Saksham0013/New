@@ -122,7 +122,7 @@ function Fireworks() {
 }
 
 /* 🎯 TARGET DATE */
-const TARGET_DATE = new Date("December 27, 2025 20:42:00").getTime();
+const TARGET_DATE = new Date("January 1, 2026 00:00:00").getTime();
 
 function App() {
   const [page, setPage] = useState("intro");
