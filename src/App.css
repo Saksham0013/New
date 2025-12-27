@@ -1,0 +1,191 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* APP WRAPPER */
+.app-wrapper {
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+}
+
+/* MAIN CONTAINER */
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: clamp(16px, 4vw, 24px);
+  text-align: center;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* TEXT */
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  color: #ff4f87;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  color: #ff2f75;
+}
+
+p {
+  font-size: clamp(0.95rem, 3.5vw, 1rem);
+  margin: 12px 0;
+  color: #555;
+}
+
+.text {
+  background: #fff5f8;
+  padding: 16px;
+  border-radius: 14px;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+button {
+  width: 100%;
+  min-height: 44px;
+  padding: 14px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 30px;
+  background: #ff4f87;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff2f75;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-group button {
+  width: 50%;
+}
+
+/* TIMER */
+.timer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.timer div {
+  background: #ffe4ec;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.timer span {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ff2f75;
+}
+
+.timer small {
+  font-size: 0.7rem;
+}
+
+/* GIFTS */
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.gift-grid div {
+  font-size: 32px;
+  padding: 18px;
+  background: #ffe4ec;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+/* SMALL PHONES */
+@media (max-width: 360px) {
+  .timer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gift-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* HIDE BACKGROUND WHEN OVERLAY ACTIVE */
+.blur-hide {
+  visibility: hidden;
+}
+
+/* NEW YEAR OVERLAY */
+.newyear-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: clamp(16px, 5vw, 32px);
+}
+
+/* OVERLAY TEXT */
+.newyear-overlay h1 {
+  font-size: clamp(1.5rem, 6vw, 3rem);
+  margin-bottom: 12px;
+}
+
+.newyear-overlay p {
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #ffd1dc;
+}
+
+/* CONTINUE BUTTON */
+.continue-btn {
+  width: min(70%, 260px);
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  background: #ff4f87;
+  color: white;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  background: #ff2f75;
+}
+
+/* LARGE SCREENS */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 460px;
+  }
+}
