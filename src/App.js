@@ -122,10 +122,11 @@ function Fireworks() {
 }
 
 /* 🎯 TARGET DATE */
-const TARGET_DATE = new Date("January 1, 2026 00:00:00").getTime();
+const TARGET_DATE = new Date(" december 28, 2025 12:03:00").getTime();
 
 function App() {
-  const [page, setPage] = useState("intro");
+  // ⬇️ START FROM COUNTDOWN
+  const [page, setPage] = useState("countdown");
   const [timeLeft, setTimeLeft] = useState({});
   const [showFireworks, setShowFireworks] = useState(false);
   const [showNewYearMessage, setShowNewYearMessage] = useState(false);
@@ -137,16 +138,20 @@ function App() {
 
       if (diff <= 0) {
         clearInterval(timer);
+
         setShowFireworks(true);
         setPage("newyear");
 
+        // Fireworks duration
         setTimeout(() => {
           setShowFireworks(false);
           setShowNewYearMessage(true);
 
-          // setTimeout(() => {
-          //   setShowNewYearMessage(false);
-          // }, 3000);
+          // After Happy New Year → Intro
+          setTimeout(() => {
+            setShowNewYearMessage(false);
+            setPage("intro");
+          }, 3000);
 
         }, 5000);
 
@@ -166,9 +171,10 @@ function App() {
   return (
     <div className="app-wrapper">
 
-      {/* 🎆 REAL FIREWORKS */}
+      {/* 🎆 FIREWORKS */}
       {showFireworks && <Fireworks />}
 
+      {/* 🎉 HAPPY NEW YEAR OVERLAY */}
       {showNewYearMessage && (
         <div className="newyear-overlay">
           <h1>🎉 Happy New Year 🎉</h1>
@@ -176,7 +182,10 @@ function App() {
 
           <button
             className="continue-btn"
-            onClick={() => setShowNewYearMessage(false)}
+            onClick={() => {
+              setShowNewYearMessage(false);
+              setPage("intro");
+            }}
           >
             Continue ❤️
           </button>
@@ -206,7 +215,7 @@ function App() {
         {page === "ready" && (
           <>
             <h1>Are you ready? 🥺</h1>
-            <button onClick={() => setPage("countdown")}>YES</button>
+            <button onClick={() => setPage("newyear")}>YES</button>
           </>
         )}
 
@@ -244,13 +253,10 @@ function App() {
             <div className="gift-grid">
               <div onClick={() => setPage("letter")}>💌</div>
               <div onClick={() => setPage("bouquet")}>🌹</div>
-              {/* <div onClick={() => setPage("music")}>🎵</div> */}
               <div onClick={() => setPage("memories")}>💿</div>
               <div onClick={() => setPage("moments")}>📸</div>
             </div>
-            <button className="back" onClick={() => setPage("newyear")}>
-              BACK
-            </button>
+            {/* <button className="back" onClick={() => setPage("newyear")}>BACK</button> */}
           </>
         )}
 
