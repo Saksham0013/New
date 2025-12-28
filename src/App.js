@@ -122,7 +122,7 @@ function Fireworks() {
 }
 
 /* 🎯 TARGET DATE */
-const TARGET_DATE = new Date(" december 28, 2025 12:03:00").getTime();
+const TARGET_DATE = new Date(" January 1, 2026 00:00:00").getTime();
 
 function App() {
   // ⬇️ START FROM COUNTDOWN
